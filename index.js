@@ -30,7 +30,7 @@ const checkAllSameOrNot = () => levers.every( lever => lever === stateFlag );
 
 const toggleLevers = () => {
   switchers.forEach((switcher, i) => {
-    switcher.checked = levers[i]
+    switcher.checked = levers[i];
   })
 }
 
@@ -54,7 +54,7 @@ socket.onmessage = event => {
 
   if (data.same) {
     levers[checkedLever] = levers[knownLever];
-    if (checkedLever < levers.length -1 ) checkedLever++;
+    if (checkedLever < levers.length - 1) checkedLever++;
     if (checkAllSameOrNot()) sendTurnOffQuery(data.stateId);
   }
 }
